@@ -1,0 +1,108 @@
+{
+    "selection_split": "validation",
+    "selection_method": "youden_j",
+    "num_validation_images": 16828,
+    "decision_rule": "positive if sigmoid_score >= threshold",
+    "classes": [
+        "Atelectasis",
+        "Cardiomegaly",
+        "Effusion",
+        "Infiltration",
+        "Mass",
+        "Nodule",
+        "Pneumonia",
+        "Pneumothorax",
+        "Consolidation",
+        "Edema",
+        "Emphysema",
+        "Fibrosis",
+        "Pleural_Thickening",
+        "Hernia"
+    ],
+    "thresholds": {
+        "Atelectasis": {
+            "threshold": 0.4244186,
+            "youden_j": 0.45702668433954946,
+            "validation_sensitivity": 0.796189376443418,
+            "validation_specificity": 0.6608373078961314
+        },
+        "Cardiomegaly": {
+            "threshold": 0.52734566,
+            "youden_j": 0.6742695117188553,
+            "validation_sensitivity": 0.8708860759493671,
+            "validation_specificity": 0.8033834357694882
+        },
+        "Effusion": {
+            "threshold": 0.62795687,
+            "youden_j": 0.6015590149155265,
+            "validation_sensitivity": 0.8226130653266331,
+            "validation_specificity": 0.7789459495888934
+        },
+        "Infiltration": {
+            "threshold": 0.4525243,
+            "youden_j": 0.3162194774844862,
+            "validation_sensitivity": 0.6027489104927924,
+            "validation_specificity": 0.7134705669916938
+        },
+        "Mass": {
+            "threshold": 0.6511167,
+            "youden_j": 0.5626114626013646,
+            "validation_sensitivity": 0.725752508361204,
+            "validation_specificity": 0.8368589542401607
+        },
+        "Nodule": {
+            "threshold": 0.5365398,
+            "youden_j": 0.36344743142635366,
+            "validation_sensitivity": 0.5847826086956521,
+            "validation_specificity": 0.7786648227307016
+        },
+        "Pneumonia": {
+            "threshold": 0.3421276,
+            "youden_j": 0.3755007676165732,
+            "validation_sensitivity": 0.6415094339622641,
+            "validation_specificity": 0.7339913336543091
+        },
+        "Pneumothorax": {
+            "threshold": 0.53230554,
+            "youden_j": 0.6028242290111365,
+            "validation_sensitivity": 0.7586618876941458,
+            "validation_specificity": 0.8441623413169909
+        },
+        "Consolidation": {
+            "threshold": 0.38253415,
+            "youden_j": 0.4807813502181971,
+            "validation_sensitivity": 0.8338028169014085,
+            "validation_specificity": 0.6469785333167887
+        },
+        "Edema": {
+            "threshold": 0.31350166,
+            "youden_j": 0.6282759039068188,
+            "validation_sensitivity": 0.875,
+            "validation_specificity": 0.7532759039068188
+        },
+        "Emphysema": {
+            "threshold": 0.33877465,
+            "youden_j": 0.6555816703621582,
+            "validation_sensitivity": 0.8109756097560976,
+            "validation_specificity": 0.8446060606060606
+        },
+        "Fibrosis": {
+            "threshold": 0.43926856,
+            "youden_j": 0.4401737649279581,
+            "validation_sensitivity": 0.7593984962406015,
+            "validation_specificity": 0.6807752686873566
+        },
+        "Pleural_Thickening": {
+            "threshold": 0.44972938,
+            "youden_j": 0.47472311466244366,
+            "validation_sensitivity": 0.7756521739130435,
+            "validation_specificity": 0.6990709407494001
+        },
+        "Hernia": {
+            "threshold": 0.06261255,
+            "youden_j": 0.7419466285441982,
+            "validation_sensitivity": 0.85,
+            "validation_specificity": 0.8919466285441983
+        }
+    }
+}

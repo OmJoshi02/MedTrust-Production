@@ -1,0 +1,309 @@
+[
+  {
+    "filename": "00000002_000.png",
+    "image_index": "00000002_000.png",
+    "finding_labels": "No Finding",
+    "findings": [
+      "No Finding"
+    ],
+    "patient_age": 80,
+    "patient_gender": "M",
+    "view_position": "PA",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000003_001.png",
+    "image_index": "00000003_001.png",
+    "finding_labels": "Hernia",
+    "findings": [
+      "Hernia"
+    ],
+    "patient_age": 74,
+    "patient_gender": "F",
+    "view_position": "PA",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000004_000.png",
+    "image_index": "00000004_000.png",
+    "finding_labels": "Mass|Nodule",
+    "findings": [
+      "Mass",
+      "Nodule"
+    ],
+    "patient_age": 82,
+    "patient_gender": "M",
+    "view_position": "AP",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000005_006.png",
+    "image_index": "00000005_006.png",
+    "finding_labels": "Infiltration",
+    "findings": [
+      "Infiltration"
+    ],
+    "patient_age": 70,
+    "patient_gender": "F",
+    "view_position": "PA",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000005_007.png",
+    "image_index": "00000005_007.png",
+    "finding_labels": "Effusion|Infiltration",
+    "findings": [
+      "Effusion",
+      "Infiltration"
+    ],
+    "patient_age": 70,
+    "patient_gender": "F",
+    "view_position": "PA",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000008_000.png",
+    "image_index": "00000008_000.png",
+    "finding_labels": "Cardiomegaly",
+    "findings": [
+      "Cardiomegaly"
+    ],
+    "patient_age": 68,
+    "patient_gender": "F",
+    "view_position": "PA",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000013_010.png",
+    "image_index": "00000013_010.png",
+    "finding_labels": "Effusion|Pneumonia|Pneumothorax",
+    "findings": [
+      "Effusion",
+      "Pneumonia",
+      "Pneumothorax"
+    ],
+    "patient_age": 60,
+    "patient_gender": "M",
+    "view_position": "AP",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000013_023.png",
+    "image_index": "00000013_023.png",
+    "finding_labels": "Infiltration|Mass|Pneumothorax",
+    "findings": [
+      "Infiltration",
+      "Mass",
+      "Pneumothorax"
+    ],
+    "patient_age": 56,
+    "patient_gender": "M",
+    "view_position": "AP",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000013_026.png",
+    "image_index": "00000013_026.png",
+    "finding_labels": "Cardiomegaly|Emphysema",
+    "findings": [
+      "Cardiomegaly",
+      "Emphysema"
+    ],
+    "patient_age": 56,
+    "patient_gender": "M",
+    "view_position": "AP",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000013_030.png",
+    "image_index": "00000013_030.png",
+    "finding_labels": "Atelectasis|Cardiomegaly|Emphysema|Mass|Pneumothorax",
+    "findings": [
+      "Atelectasis",
+      "Cardiomegaly",
+      "Emphysema",
+      "Mass",
+      "Pneumothorax"
+    ],
+    "patient_age": 56,
+    "patient_gender": "M",
+    "view_position": "AP",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000013_033.png",
+    "image_index": "00000013_033.png",
+    "finding_labels": "Pneumothorax",
+    "findings": [
+      "Pneumothorax"
+    ],
+    "patient_age": 56,
+    "patient_gender": "M",
+    "view_position": "PA",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000013_043.png",
+    "image_index": "00000013_043.png",
+    "finding_labels": "Mass|Pleural_Thickening",
+    "findings": [
+      "Mass",
+      "Pleural_Thickening"
+    ],
+    "patient_age": 56,
+    "patient_gender": "M",
+    "view_position": "PA",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000020_001.png",
+    "image_index": "00000020_001.png",
+    "finding_labels": "Fibrosis|Infiltration",
+    "findings": [
+      "Fibrosis",
+      "Infiltration"
+    ],
+    "patient_age": 47,
+    "patient_gender": "M",
+    "view_position": "PA",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000030_000.png",
+    "image_index": "00000030_000.png",
+    "finding_labels": "Atelectasis",
+    "findings": [
+      "Atelectasis"
+    ],
+    "patient_age": 74,
+    "patient_gender": "M",
+    "view_position": "PA",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000032_001.png",
+    "image_index": "00000032_001.png",
+    "finding_labels": "Cardiomegaly|Edema|Effusion",
+    "findings": [
+      "Cardiomegaly",
+      "Edema",
+      "Effusion"
+    ],
+    "patient_age": 54,
+    "patient_gender": "F",
+    "view_position": "AP",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000032_012.png",
+    "image_index": "00000032_012.png",
+    "finding_labels": "Atelectasis|Consolidation|Edema|Pneumonia",
+    "findings": [
+      "Atelectasis",
+      "Consolidation",
+      "Edema",
+      "Pneumonia"
+    ],
+    "patient_age": 54,
+    "patient_gender": "F",
+    "view_position": "AP",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "00000165_001.png",
+    "image_index": "00000165_001.png",
+    "finding_labels": "Pneumonia",
+    "findings": [
+      "Pneumonia"
+    ],
+    "patient_age": 76,
+    "patient_gender": "M",
+    "view_position": "PA",
+    "dataset_source": "NIH ChestX-ray14",
+    "annotation_type": "Dataset Annotation"
+  },
+  {
+    "filename": "xray001.jpg",
+    "image_index": "DEMO-xray001.jpg",
+    "finding_labels": "Cardiomegaly|Effusion",
+    "findings": [
+      "Cardiomegaly",
+      "Effusion"
+    ],
+    "patient_age": 58,
+    "patient_gender": "M",
+    "view_position": "PA",
+    "dataset_source": "Synthetic Benchmark Demonstration",
+    "annotation_type": "Demonstration Benchmark Label"
+  },
+  {
+    "filename": "xray002.jpg",
+    "image_index": "DEMO-xray002.jpg",
+    "finding_labels": "Pneumonia|Infiltration",
+    "findings": [
+      "Pneumonia",
+      "Infiltration"
+    ],
+    "patient_age": 45,
+    "patient_gender": "F",
+    "view_position": "PA",
+    "dataset_source": "Synthetic Benchmark Demonstration",
+    "annotation_type": "Demonstration Benchmark Label"
+  },
+  {
+    "filename": "xray003.jpg",
+    "image_index": "DEMO-xray003.jpg",
+    "finding_labels": "Pneumothorax",
+    "findings": [
+      "Pneumothorax"
+    ],
+    "patient_age": 31,
+    "patient_gender": "M",
+    "view_position": "PA",
+    "dataset_source": "Synthetic Benchmark Demonstration",
+    "annotation_type": "Demonstration Benchmark Label"
+  },
+  {
+    "filename": "xray004.jpg",
+    "image_index": "DEMO-xray004.jpg",
+    "finding_labels": "Nodule|Mass",
+    "findings": [
+      "Nodule",
+      "Mass"
+    ],
+    "patient_age": 62,
+    "patient_gender": "F",
+    "view_position": "PA",
+    "dataset_source": "Synthetic Benchmark Demonstration",
+    "annotation_type": "Demonstration Benchmark Label"
+  },
+  {
+    "filename": "xray005.jpg",
+    "image_index": "DEMO-xray005.jpg",
+    "finding_labels": "Atelectasis",
+    "findings": [
+      "Atelectasis"
+    ],
+    "patient_age": 67,
+    "patient_gender": "M",
+    "view_position": "PA",
+    "dataset_source": "Synthetic Benchmark Demonstration",
+    "annotation_type": "Demonstration Benchmark Label"
+  }
+]

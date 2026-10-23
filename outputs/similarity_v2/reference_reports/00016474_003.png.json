@@ -1,0 +1,143 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00016474_003.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "16474",
+  "demographics": {
+    "patient_age": 28,
+    "patient_gender": "M",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Infiltration"
+    ],
+    "finding_labels": "Infiltration",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.1027,
+      "Cardiomegaly": 0.5975,
+      "Effusion": 0.209,
+      "Infiltration": 0.4864,
+      "Mass": 0.0373,
+      "Nodule": 0.4916,
+      "Pneumonia": 0.0756,
+      "Pneumothorax": 0.0116,
+      "Consolidation": 0.0715,
+      "Edema": 0.0079,
+      "Emphysema": 0.003,
+      "Fibrosis": 0.1688,
+      "Pleural_Thickening": 0.2241,
+      "Hernia": 0.0001
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.1217,
+      "Cardiomegaly": 0.5616,
+      "Effusion": 0.3131,
+      "Infiltration": 0.4828,
+      "Mass": 0.091,
+      "Nodule": 0.4925,
+      "Pneumonia": 0.0342,
+      "Pneumothorax": 0.0246,
+      "Consolidation": 0.1331,
+      "Edema": 0.0344,
+      "Emphysema": 0.0044,
+      "Fibrosis": 0.2205,
+      "Pleural_Thickening": 0.2352,
+      "Hernia": 0.0001
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "NEGATIVE",
+      "Cardiomegaly": "POSITIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "POSITIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "NEGATIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "NEGATIVE",
+      "Pleural_Thickening": "NEGATIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Cardiomegaly",
+      "raw_probability": 0.5975,
+      "calibrated_probability": 0.5616
+    },
+    "detected_findings": [
+      "Cardiomegaly",
+      "Infiltration"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 59,
+    "sharpness": 53.88,
+    "contrast": 63.29,
+    "brightness": 95.13,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.5975,
+    "energy_score": -1.5018
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Cardiomegaly",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "0059b6cb0c936a9fe0f3a513b8f785396e942a3447e38cf738e9605aad6733ff"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:47:18.890980+00:00",
+  "report_sha256": "4f42aaf897282b1f2dbb270440eaf349256ce1de2d84a8c66211baf1291726fd"
+}

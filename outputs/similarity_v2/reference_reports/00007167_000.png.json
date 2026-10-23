@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00007167_000.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "7167",
+  "demographics": {
+    "patient_age": 48,
+    "patient_gender": "M",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Atelectasis",
+      "Hernia",
+      "Mass"
+    ],
+    "finding_labels": "Atelectasis|Hernia|Mass",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.4017,
+      "Cardiomegaly": 0.0038,
+      "Effusion": 0.0491,
+      "Infiltration": 0.1547,
+      "Mass": 0.3859,
+      "Nodule": 0.3645,
+      "Pneumonia": 0.1156,
+      "Pneumothorax": 0.0796,
+      "Consolidation": 0.0437,
+      "Edema": 0.0018,
+      "Emphysema": 0.0937,
+      "Fibrosis": 0.309,
+      "Pleural_Thickening": 0.1303,
+      "Hernia": 0.9892
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.4102,
+      "Cardiomegaly": 0.0296,
+      "Effusion": 0.1481,
+      "Infiltration": 0.105,
+      "Mass": 0.4185,
+      "Nodule": 0.3778,
+      "Pneumonia": 0.0621,
+      "Pneumothorax": 0.1168,
+      "Consolidation": 0.0949,
+      "Edema": 0.0125,
+      "Emphysema": 0.1075,
+      "Fibrosis": 0.3458,
+      "Pleural_Thickening": 0.1417,
+      "Hernia": 0.9869
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "NEGATIVE",
+      "Cardiomegaly": "NEGATIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "NEGATIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "NEGATIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "NEGATIVE",
+      "Pleural_Thickening": "NEGATIVE",
+      "Hernia": "POSITIVE"
+    },
+    "primary_finding": {
+      "disease": "Hernia",
+      "raw_probability": 0.9892,
+      "calibrated_probability": 0.9869
+    },
+    "detected_findings": [
+      "Hernia"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 65,
+    "sharpness": 211.32,
+    "contrast": 38.49,
+    "brightness": 175.74,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.9892,
+    "energy_score": -4.5463
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Hernia",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "3b57a8a3008f54b60c3aa3999a6af9be176ce7049c67569ab9e0264008718b05"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:46:40.865570+00:00",
+  "report_sha256": "0d5b5e72e72cbb0bb0880659f67a2661a939cdafa2d3a4de4125daedea33aabe"
+}

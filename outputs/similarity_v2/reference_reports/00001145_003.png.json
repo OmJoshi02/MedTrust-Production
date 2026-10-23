@@ -1,0 +1,143 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00001145_003.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "1145",
+  "demographics": {
+    "patient_age": 27,
+    "patient_gender": "M",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Mass"
+    ],
+    "finding_labels": "Mass",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.1091,
+      "Cardiomegaly": 0.0013,
+      "Effusion": 0.2735,
+      "Infiltration": 0.3734,
+      "Mass": 0.5331,
+      "Nodule": 0.2863,
+      "Pneumonia": 0.0373,
+      "Pneumothorax": 0.3035,
+      "Consolidation": 0.1216,
+      "Edema": 0.0014,
+      "Emphysema": 0.058,
+      "Fibrosis": 0.5067,
+      "Pleural_Thickening": 0.6485,
+      "Hernia": 0.0005
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.1284,
+      "Cardiomegaly": 0.0154,
+      "Effusion": 0.3597,
+      "Infiltration": 0.3422,
+      "Mass": 0.5235,
+      "Nodule": 0.3058,
+      "Pneumonia": 0.0129,
+      "Pneumothorax": 0.3348,
+      "Consolidation": 0.1907,
+      "Edema": 0.0108,
+      "Emphysema": 0.0692,
+      "Fibrosis": 0.5053,
+      "Pleural_Thickening": 0.6414,
+      "Hernia": 0.0007
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "NEGATIVE",
+      "Cardiomegaly": "NEGATIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "NEGATIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "NEGATIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "POSITIVE",
+      "Pleural_Thickening": "POSITIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Pleural_Thickening",
+      "raw_probability": 0.6485,
+      "calibrated_probability": 0.6414
+    },
+    "detected_findings": [
+      "Fibrosis",
+      "Pleural_Thickening"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 60,
+    "sharpness": 54.21,
+    "contrast": 63.28,
+    "brightness": 100.26,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.6485,
+    "energy_score": -1.8225
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Pleural_Thickening",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "d51961f78f6e2898f681fa7eea5a6523e9f192d24e9132b713b005a589a2ffe8"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:46:17.021567+00:00",
+  "report_sha256": "cc4272dd2b278db36df90ccc23add3151298985e9589bc8e5e6a16af5be2edfb"
+}

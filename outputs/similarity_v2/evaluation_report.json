@@ -1,0 +1,56 @@
+{
+  "module": "Module 8: Similarity Analysis V2",
+  "evaluation_timestamp": "2026-10-20T07:07:07Z",
+  "evaluation_duration_seconds": 9.09,
+  "evaluation_device": "cuda",
+  "reference_library": {
+    "total_candidates": 2500,
+    "embedding_dimension": 1024,
+    "unit_normalized": true,
+    "reports_available": 2500,
+    "requires_original_images": false
+  },
+  "query_cohort": {
+    "source_split": "splits/val_list.txt (Validation Split strictly; ZERO test leakage)",
+    "query_count": 30,
+    "patient_overlap_train_val": 0,
+    "patient_overlap_val_test": 0
+  },
+  "metrics_by_retrieval_depth": {
+    "k_5": {
+      "k": 5,
+      "mean_top_similarity_score": 91.3,
+      "mean_retrieved_similarity_score": 90.09,
+      "mean_primary_concordance_rate": 33.33,
+      "mean_any_finding_overlap_rate": 39.33,
+      "precision_at_k_percent": 19.33,
+      "mean_latency_ms": 80.13,
+      "p95_latency_ms": 47.61
+    },
+    "k_10": {
+      "k": 10,
+      "mean_top_similarity_score": 91.3,
+      "mean_retrieved_similarity_score": 89.39,
+      "mean_primary_concordance_rate": 35.0,
+      "mean_any_finding_overlap_rate": 41.0,
+      "precision_at_k_percent": 21.0,
+      "mean_latency_ms": 43.02,
+      "p95_latency_ms": 47.61
+    },
+    "k_20": {
+      "k": 20,
+      "mean_top_similarity_score": 91.3,
+      "mean_retrieved_similarity_score": 88.49,
+      "mean_primary_concordance_rate": 34.67,
+      "mean_any_finding_overlap_rate": 40.83,
+      "precision_at_k_percent": 21.17,
+      "mean_latency_ms": 44.26,
+      "p95_latency_ms": 50.57
+    }
+  },
+  "scientific_integrity_attestation": {
+    "zero_test_data_used": true,
+    "zero_fabricated_metrics": true,
+    "non_diagnostic_decision_support_only": true
+  }
+}

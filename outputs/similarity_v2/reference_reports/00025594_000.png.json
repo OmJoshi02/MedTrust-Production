@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00025594_000.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "25594",
+  "demographics": {
+    "patient_age": 19,
+    "patient_gender": "M",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Cardiomegaly",
+      "Effusion"
+    ],
+    "finding_labels": "Cardiomegaly|Effusion",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.1814,
+      "Cardiomegaly": 0.9854,
+      "Effusion": 0.7381,
+      "Infiltration": 0.4318,
+      "Mass": 0.19,
+      "Nodule": 0.2313,
+      "Pneumonia": 0.0719,
+      "Pneumothorax": 0.0526,
+      "Consolidation": 0.1244,
+      "Edema": 0.069,
+      "Emphysema": 0.0181,
+      "Fibrosis": 0.383,
+      "Pleural_Thickening": 0.3921,
+      "Hernia": 0.0016
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.2019,
+      "Cardiomegaly": 0.9332,
+      "Effusion": 0.6483,
+      "Infiltration": 0.4142,
+      "Mass": 0.2637,
+      "Nodule": 0.2539,
+      "Pneumonia": 0.0319,
+      "Pneumothorax": 0.0839,
+      "Consolidation": 0.1937,
+      "Edema": 0.1422,
+      "Emphysema": 0.0236,
+      "Fibrosis": 0.4067,
+      "Pleural_Thickening": 0.3974,
+      "Hernia": 0.0021
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "NEGATIVE",
+      "Cardiomegaly": "POSITIVE",
+      "Effusion": "POSITIVE",
+      "Infiltration": "NEGATIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "NEGATIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "NEGATIVE",
+      "Pleural_Thickening": "NEGATIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Cardiomegaly",
+      "raw_probability": 0.9854,
+      "calibrated_probability": 0.9332
+    },
+    "detected_findings": [
+      "Cardiomegaly",
+      "Effusion"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 64,
+    "sharpness": 61.0,
+    "contrast": 71.82,
+    "brightness": 110.99,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.9854,
+    "energy_score": -4.2939
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Cardiomegaly",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "1e0263cdd82ebb033256c066184d3a1f11f4e342948012b50c58c7da47c8aeac"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:47:53.002534+00:00",
+  "report_sha256": "9e8379868815904d77d048bc5752b30ef2b620fc58c37ebf73c29d3c1e67bffe"
+}

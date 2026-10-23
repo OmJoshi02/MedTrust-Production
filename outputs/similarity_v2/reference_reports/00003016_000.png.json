@@ -1,0 +1,143 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00003016_000.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "3016",
+  "demographics": {
+    "patient_age": 47,
+    "patient_gender": "F",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Fibrosis"
+    ],
+    "finding_labels": "Fibrosis",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.0671,
+      "Cardiomegaly": 0.5396,
+      "Effusion": 0.0781,
+      "Infiltration": 0.1831,
+      "Mass": 0.234,
+      "Nodule": 0.4466,
+      "Pneumonia": 0.0827,
+      "Pneumothorax": 0.1446,
+      "Consolidation": 0.0968,
+      "Edema": 0.01,
+      "Emphysema": 0.2022,
+      "Fibrosis": 0.9354,
+      "Pleural_Thickening": 0.8153,
+      "Hernia": 0.0004
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.0832,
+      "Cardiomegaly": 0.5248,
+      "Effusion": 0.1889,
+      "Infiltration": 0.1316,
+      "Mass": 0.3016,
+      "Nodule": 0.452,
+      "Pneumonia": 0.0388,
+      "Pneumothorax": 0.187,
+      "Consolidation": 0.1635,
+      "Edema": 0.0402,
+      "Emphysema": 0.2176,
+      "Fibrosis": 0.8925,
+      "Pleural_Thickening": 0.8037,
+      "Hernia": 0.0006
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "NEGATIVE",
+      "Cardiomegaly": "NEGATIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "NEGATIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "NEGATIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "POSITIVE",
+      "Pleural_Thickening": "POSITIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Fibrosis",
+      "raw_probability": 0.9354,
+      "calibrated_probability": 0.8925
+    },
+    "detected_findings": [
+      "Fibrosis",
+      "Pleural_Thickening"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 48,
+    "sharpness": 22.84,
+    "contrast": 47.95,
+    "brightness": 159.03,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.9354,
+    "energy_score": -3.0992
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Fibrosis",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "156fc45a484f896a270efa3af095906ae3b969786aea88656ef7707f76ed48b6"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:46:25.288438+00:00",
+  "report_sha256": "8daee918d9ac9e8afcbe1a3456ea78794aa030ccd178926a391ab1b97de1eacc"
+}

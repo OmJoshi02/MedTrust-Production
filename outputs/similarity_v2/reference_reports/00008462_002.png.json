@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00008462_002.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "8462",
+  "demographics": {
+    "patient_age": 50,
+    "patient_gender": "F",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Atelectasis"
+    ],
+    "finding_labels": "Atelectasis",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.5875,
+      "Cardiomegaly": 0.1351,
+      "Effusion": 0.1519,
+      "Infiltration": 0.2739,
+      "Mass": 0.4709,
+      "Nodule": 0.3781,
+      "Pneumonia": 0.0609,
+      "Pneumothorax": 0.2423,
+      "Consolidation": 0.2469,
+      "Edema": 0.0008,
+      "Emphysema": 0.0693,
+      "Fibrosis": 0.571,
+      "Pleural_Thickening": 0.3465,
+      "Hernia": 0.108
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.5799,
+      "Cardiomegaly": 0.2381,
+      "Effusion": 0.266,
+      "Infiltration": 0.2261,
+      "Mass": 0.4794,
+      "Nodule": 0.3902,
+      "Pneumonia": 0.0253,
+      "Pneumothorax": 0.2804,
+      "Consolidation": 0.3068,
+      "Edema": 0.007,
+      "Emphysema": 0.0815,
+      "Fibrosis": 0.5564,
+      "Pleural_Thickening": 0.3538,
+      "Hernia": 0.1171
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "POSITIVE",
+      "Cardiomegaly": "NEGATIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "NEGATIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "NEGATIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "POSITIVE",
+      "Pleural_Thickening": "NEGATIVE",
+      "Hernia": "POSITIVE"
+    },
+    "primary_finding": {
+      "disease": "Atelectasis",
+      "raw_probability": 0.5875,
+      "calibrated_probability": 0.5799
+    },
+    "detected_findings": [
+      "Atelectasis",
+      "Fibrosis",
+      "Hernia"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 67,
+    "sharpness": 70.64,
+    "contrast": 68.68,
+    "brightness": 140.31,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.5875,
+    "energy_score": -1.857
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Atelectasis",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "b63b3335e481d9385c333e6668f642d0ed3f9e67fef97bb6b364a7caef0224f0"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:46:46.297777+00:00",
+  "report_sha256": "debf0d25222b339c96c1017a610598e76f7e42972cead170501b8c89370c2ba2"
+}

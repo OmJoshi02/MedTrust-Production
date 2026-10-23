@@ -1,0 +1,15 @@
+{
+    "split": "test",
+    "num_images": 16805,
+    "checkpoint": "checkpoints/best_model.pt",
+    "checkpoint_epoch": 7,
+    "threshold_source": "validation",
+    "threshold_method": "youden_j",
+    "threshold_file": "outputs/evaluation/thresholds.json",
+    "macro_auroc": 0.8290435896950376,
+    "macro_sensitivity": 0.7522706190256547,
+    "macro_specificity": 0.7567345551995448,
+    "macro_precision": 0.13472596984598106,
+    "macro_recall": 0.7522706190256547,
+    "macro_f1": 0.2124779596536205
+}

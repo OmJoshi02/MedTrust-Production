@@ -1,0 +1,27 @@
+# ==============================================================================
+# MedTrust V1 — Production Python Requirements
+#
+# Installation:
+#   pip install -r requirements.txt
+#
+# For NVIDIA CUDA GPU acceleration (optional, recommended if GPU is available):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#   pip install -r requirements.txt
+# ==============================================================================
+
+# Deep Learning Framework & Model Inference (DenseNet-121)
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Scientific Computing & Data Processing
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+
+# Machine Learning & Out-of-Distribution (OOD) Metrics
+scikit-learn>=1.3.0
+
+# Image Processing & Radiograph Analysis
+Pillow>=9.5.0
+matplotlib>=3.7.0
+opencv-python-headless>=4.8.0

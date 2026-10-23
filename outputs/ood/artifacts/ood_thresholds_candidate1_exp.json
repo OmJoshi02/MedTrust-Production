@@ -1,0 +1,42 @@
+{
+    "threshold_method": "joint_union_percentile",
+    "source": "validation_only",
+    "calibration_dataset": "NIH ChestX-ray14 ID validation",
+    "target_false_positive_rate": 0.10,
+    "combined_policy": "logical_or_union",
+    "combined_validation_rejection_rate": 0.10001188495364868,
+    "combined_validation_rejections": 1683,
+    "total_validation_samples": 16828,
+    "test_data_used": false,
+    "ood_validation_data_used": false,
+    "thresholds": {
+        "msp": {
+            "threshold": 0.737333,
+            "method": "joint_union_percentile",
+            "percentile": 95.173,
+            "target_false_positive_rate": 0.04831233658188733,
+            "observed_false_positive_rate": 0.04831233658188733,
+            "observed_rejections": 813,
+            "validation_samples": 16828
+        },
+        "energy": {
+            "threshold": -0.071788,
+            "method": "joint_union_percentile",
+            "percentile": 95.173,
+            "target_false_positive_rate": 0.04831233658188733,
+            "observed_false_positive_rate": 0.04831233658188733,
+            "observed_rejections": 813,
+            "validation_samples": 16828
+        },
+        "mahalanobis": {
+            "threshold": 975.531329,
+            "method": "joint_union_percentile",
+            "percentile": 95.173,
+            "target_false_positive_rate": 0.04831233658188733,
+            "observed_false_positive_rate": 0.04831233658188733,
+            "observed_rejections": 813,
+            "validation_samples": 16828
+        }
+    }
+}
+

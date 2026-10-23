@@ -1,0 +1,152 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00021006_023.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "21006",
+  "demographics": {
+    "patient_age": 71,
+    "patient_gender": "M",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Atelectasis",
+      "Infiltration",
+      "Pneumothorax"
+    ],
+    "finding_labels": "Atelectasis|Infiltration|Pneumothorax",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.6764,
+      "Cardiomegaly": 0.2666,
+      "Effusion": 0.7049,
+      "Infiltration": 0.6519,
+      "Mass": 0.6873,
+      "Nodule": 0.3169,
+      "Pneumonia": 0.6815,
+      "Pneumothorax": 0.9212,
+      "Consolidation": 0.7867,
+      "Edema": 0.295,
+      "Emphysema": 0.9276,
+      "Fibrosis": 0.7103,
+      "Pleural_Thickening": 0.6329,
+      "Hernia": 0.0303
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.6621,
+      "Cardiomegaly": 0.3466,
+      "Effusion": 0.6257,
+      "Infiltration": 0.6882,
+      "Mass": 0.6359,
+      "Nodule": 0.3342,
+      "Pneumonia": 0.734,
+      "Pneumothorax": 0.8841,
+      "Consolidation": 0.7219,
+      "Edema": 0.3539,
+      "Emphysema": 0.9151,
+      "Fibrosis": 0.6705,
+      "Pleural_Thickening": 0.6264,
+      "Hernia": 0.035
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "POSITIVE",
+      "Cardiomegaly": "NEGATIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "POSITIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "POSITIVE",
+      "Pneumothorax": "POSITIVE",
+      "Consolidation": "POSITIVE",
+      "Edema": "POSITIVE",
+      "Emphysema": "POSITIVE",
+      "Fibrosis": "POSITIVE",
+      "Pleural_Thickening": "POSITIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Emphysema",
+      "raw_probability": 0.9276,
+      "calibrated_probability": 0.9151
+    },
+    "detected_findings": [
+      "Atelectasis",
+      "Infiltration",
+      "Pneumonia",
+      "Pneumothorax",
+      "Consolidation",
+      "Edema",
+      "Emphysema",
+      "Fibrosis",
+      "Pleural_Thickening"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 68,
+    "sharpness": 69.28,
+    "contrast": 73.86,
+    "brightness": 124.05,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.9276,
+    "energy_score": -3.7914
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Emphysema",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "67def9cf754933c943c29c80b44b23f9f2787b88b4407b92eee3ce3d9c489260"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:47:41.508086+00:00",
+  "report_sha256": "6b3a245ce1e7f0240ae872471562c68663cd9a7c526446b36aa9a87521d6408b"
+}

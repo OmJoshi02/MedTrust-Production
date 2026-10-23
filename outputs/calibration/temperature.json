@@ -1,0 +1,115 @@
+{
+    "project": "MedTrust",
+    "module": "Probability Calibration",
+    "method": "per-disease temperature scaling",
+    "calibration_split": "validation",
+    "calibration_source": "outputs/evaluation/validation_predictions.csv",
+    "calibration_samples": 16828,
+    "objective": "binary negative log-likelihood",
+    "parameterization": "temperature = exp(log_temperature)",
+    "classes": [
+        "Atelectasis",
+        "Cardiomegaly",
+        "Effusion",
+        "Infiltration",
+        "Mass",
+        "Nodule",
+        "Pneumonia",
+        "Pneumothorax",
+        "Consolidation",
+        "Edema",
+        "Emphysema",
+        "Fibrosis",
+        "Pleural_Thickening",
+        "Hernia"
+    ],
+    "temperatures": {
+        "Atelectasis": 1.0967302571289188,
+        "Cardiomegaly": 1.5963587632990808,
+        "Effusion": 1.6939381526221304,
+        "Infiltration": 0.7923900732256919,
+        "Mass": 1.4120344143945551,
+        "Nodule": 1.114117758683655,
+        "Pneumonia": 0.7495343752629426,
+        "Pneumothorax": 1.2095743977999114,
+        "Consolidation": 1.3682258838668648,
+        "Edema": 1.4473631651785814,
+        "Emphysema": 1.0724335625494739,
+        "Fibrosis": 1.2622640341482412,
+        "Pleural_Thickening": 1.05341181018785,
+        "Hernia": 1.0450633669992837
+    },
+    "validation_optimization": {
+        "Atelectasis": {
+            "nll_before": 0.513584035062536,
+            "nll_after": 0.5126146780195923,
+            "nll_improvement": 0.0009693570429437637
+        },
+        "Cardiomegaly": {
+            "nll_before": 0.44454203267790127,
+            "nll_after": 0.41206785744010294,
+            "nll_improvement": 0.03247417523779833
+        },
+        "Effusion": {
+            "nll_before": 0.5795088557534939,
+            "nll_after": 0.5397002389216412,
+            "nll_improvement": 0.03980861683185266
+        },
+        "Infiltration": {
+            "nll_before": 0.5738851750722261,
+            "nll_after": 0.5696879790275144,
+            "nll_improvement": 0.004197196044711693
+        },
+        "Mass": {
+            "nll_before": 0.5550414716493218,
+            "nll_after": 0.5394401894412028,
+            "nll_improvement": 0.015601282208119072
+        },
+        "Nodule": {
+            "nll_before": 0.5686191587101576,
+            "nll_after": 0.5674734264931175,
+            "nll_improvement": 0.001145732217040063
+        },
+        "Pneumonia": {
+            "nll_before": 0.3461174861842008,
+            "nll_after": 0.3360998897815514,
+            "nll_improvement": 0.010017596402649376
+        },
+        "Pneumothorax": {
+            "nll_before": 0.40674686443148583,
+            "nll_after": 0.4013423025637533,
+            "nll_improvement": 0.005404561867732527
+        },
+        "Consolidation": {
+            "nll_before": 0.5222033729274128,
+            "nll_after": 0.5087690651023824,
+            "nll_improvement": 0.013434307825030412
+        },
+        "Edema": {
+            "nll_before": 0.3645055725289614,
+            "nll_after": 0.3451552434233445,
+            "nll_improvement": 0.019350329105616848
+        },
+        "Emphysema": {
+            "nll_before": 0.27582553919286157,
+            "nll_after": 0.2752124467185555,
+            "nll_improvement": 0.0006130924743060762
+        },
+        "Fibrosis": {
+            "nll_before": 0.5177036952781268,
+            "nll_after": 0.5110175235496867,
+            "nll_improvement": 0.0066861717284401045
+        },
+        "Pleural_Thickening": {
+            "nll_before": 0.5206082072271238,
+            "nll_after": 0.5203022382345036,
+            "nll_improvement": 0.00030596899262014254
+        },
+        "Hernia": {
+            "nll_before": 0.080661099597992,
+            "nll_after": 0.0805294045738608,
+            "nll_improvement": 0.00013169502413119816
+        }
+    },
+    "test_data_used_for_fitting": false
+}

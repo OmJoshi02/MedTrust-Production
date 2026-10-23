@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00004519_006.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "4519",
+  "demographics": {
+    "patient_age": 57,
+    "patient_gender": "M",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Infiltration",
+      "Nodule"
+    ],
+    "finding_labels": "Infiltration|Nodule",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.3219,
+      "Cardiomegaly": 0.0304,
+      "Effusion": 0.2176,
+      "Infiltration": 0.3362,
+      "Mass": 0.9618,
+      "Nodule": 0.9798,
+      "Pneumonia": 0.1836,
+      "Pneumothorax": 0.1668,
+      "Consolidation": 0.3418,
+      "Edema": 0.0511,
+      "Emphysema": 0.1167,
+      "Fibrosis": 0.0456,
+      "Pleural_Thickening": 0.1683,
+      "Hernia": 0.0495
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.3364,
+      "Cardiomegaly": 0.1025,
+      "Effusion": 0.3196,
+      "Infiltration": 0.2976,
+      "Mass": 0.9076,
+      "Nodule": 0.9702,
+      "Pneumonia": 0.1201,
+      "Pneumothorax": 0.2092,
+      "Consolidation": 0.3825,
+      "Edema": 0.1172,
+      "Emphysema": 0.1315,
+      "Fibrosis": 0.0824,
+      "Pleural_Thickening": 0.1799,
+      "Hernia": 0.0559
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "NEGATIVE",
+      "Cardiomegaly": "NEGATIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "NEGATIVE",
+      "Mass": "POSITIVE",
+      "Nodule": "POSITIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "NEGATIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "NEGATIVE",
+      "Pleural_Thickening": "NEGATIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Nodule",
+      "raw_probability": 0.9798,
+      "calibrated_probability": 0.9702
+    },
+    "detected_findings": [
+      "Mass",
+      "Nodule"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 49,
+    "sharpness": 19.58,
+    "contrast": 50.62,
+    "brightness": 155.99,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.9798,
+    "energy_score": -4.3353
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Nodule",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "6e5b9bca75916f39ca3ae031a00a30a19ecdb045456fcfdce3a0a29f5e3d67ef"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:46:29.042220+00:00",
+  "report_sha256": "528346c9e7a4c5cdbe43c6b6a7411248f94db295124db37a482bff549dd0d250"
+}

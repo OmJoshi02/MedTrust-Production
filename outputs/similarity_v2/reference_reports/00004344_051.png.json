@@ -1,0 +1,149 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00004344_051.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "4344",
+  "demographics": {
+    "patient_age": 48,
+    "patient_gender": "F",
+    "view_position": "AP"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Cardiomegaly",
+      "Infiltration"
+    ],
+    "finding_labels": "Cardiomegaly|Infiltration",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.5072,
+      "Cardiomegaly": 0.9759,
+      "Effusion": 0.7535,
+      "Infiltration": 0.785,
+      "Mass": 0.1738,
+      "Nodule": 0.4475,
+      "Pneumonia": 0.7145,
+      "Pneumothorax": 0.0406,
+      "Consolidation": 0.6369,
+      "Edema": 0.9359,
+      "Emphysema": 0.012,
+      "Fibrosis": 0.2835,
+      "Pleural_Thickening": 0.3493,
+      "Hernia": 0.0023
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.5066,
+      "Cardiomegaly": 0.9104,
+      "Effusion": 0.6592,
+      "Infiltration": 0.8368,
+      "Mass": 0.249,
+      "Nodule": 0.4529,
+      "Pneumonia": 0.7728,
+      "Pneumothorax": 0.0682,
+      "Consolidation": 0.6013,
+      "Edema": 0.8644,
+      "Emphysema": 0.0161,
+      "Fibrosis": 0.3242,
+      "Pleural_Thickening": 0.3565,
+      "Hernia": 0.003
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "POSITIVE",
+      "Cardiomegaly": "POSITIVE",
+      "Effusion": "POSITIVE",
+      "Infiltration": "POSITIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "POSITIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "POSITIVE",
+      "Edema": "POSITIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "NEGATIVE",
+      "Pleural_Thickening": "NEGATIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Cardiomegaly",
+      "raw_probability": 0.9759,
+      "calibrated_probability": 0.9104
+    },
+    "detected_findings": [
+      "Atelectasis",
+      "Cardiomegaly",
+      "Effusion",
+      "Infiltration",
+      "Pneumonia",
+      "Consolidation",
+      "Edema"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 65,
+    "sharpness": 119.77,
+    "contrast": 49.84,
+    "brightness": 111.12,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.9759,
+    "energy_score": -4.236
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Cardiomegaly",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "f593db543224a556a0c5da5a7e3a7f36efd2370c3632632c6498792cd8957158"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:46:28.920117+00:00",
+  "report_sha256": "d25686dc6d9310b1641b9d4889e561c9243a7bf74304d75879c30b706c05732d"
+}

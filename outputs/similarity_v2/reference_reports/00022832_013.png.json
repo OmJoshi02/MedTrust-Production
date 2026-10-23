@@ -1,0 +1,143 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00022832_013.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "22832",
+  "demographics": {
+    "patient_age": 51,
+    "patient_gender": "M",
+    "view_position": "AP"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Atelectasis"
+    ],
+    "finding_labels": "Atelectasis",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.8305,
+      "Cardiomegaly": 0.4095,
+      "Effusion": 0.2242,
+      "Infiltration": 0.3564,
+      "Mass": 0.1859,
+      "Nodule": 0.1251,
+      "Pneumonia": 0.2102,
+      "Pneumothorax": 0.2427,
+      "Consolidation": 0.4196,
+      "Edema": 0.2261,
+      "Emphysema": 0.227,
+      "Fibrosis": 0.1443,
+      "Pleural_Thickening": 0.1879,
+      "Hernia": 0.0022
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.8099,
+      "Cardiomegaly": 0.4429,
+      "Effusion": 0.3246,
+      "Infiltration": 0.3217,
+      "Mass": 0.26,
+      "Nodule": 0.1486,
+      "Pneumonia": 0.1461,
+      "Pneumothorax": 0.2807,
+      "Consolidation": 0.441,
+      "Edema": 0.2994,
+      "Emphysema": 0.2418,
+      "Fibrosis": 0.1962,
+      "Pleural_Thickening": 0.1995,
+      "Hernia": 0.0029
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "POSITIVE",
+      "Cardiomegaly": "NEGATIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "NEGATIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "POSITIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "NEGATIVE",
+      "Pleural_Thickening": "NEGATIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Atelectasis",
+      "raw_probability": 0.8305,
+      "calibrated_probability": 0.8099
+    },
+    "detected_findings": [
+      "Atelectasis",
+      "Consolidation"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 92,
+    "sharpness": 255.18,
+    "contrast": 62.43,
+    "brightness": 124.18,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.8305,
+    "energy_score": -2.209
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Atelectasis",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "a5be6c1686aec191c10b49d1c6c3de854f2946bfe8d03993df3a1076169e6f4a"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:47:47.600302+00:00",
+  "report_sha256": "deaa78270a6b29d59c8b68c14aa0e2e1ca43b8cb64132e7b6226aa80553fef6a"
+}

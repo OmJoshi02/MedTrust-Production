@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00025447_002.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "25447",
+  "demographics": {
+    "patient_age": 55,
+    "patient_gender": "M",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Nodule"
+    ],
+    "finding_labels": "Nodule",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.1959,
+      "Cardiomegaly": 0.2278,
+      "Effusion": 0.1921,
+      "Infiltration": 0.5018,
+      "Mass": 0.2937,
+      "Nodule": 0.5668,
+      "Pneumonia": 0.2052,
+      "Pneumothorax": 0.0314,
+      "Consolidation": 0.2674,
+      "Edema": 0.0801,
+      "Emphysema": 0.2081,
+      "Fibrosis": 0.7366,
+      "Pleural_Thickening": 0.2913,
+      "Hernia": 0.0011
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.2162,
+      "Cardiomegaly": 0.3176,
+      "Effusion": 0.2998,
+      "Infiltration": 0.5022,
+      "Mass": 0.3495,
+      "Nodule": 0.56,
+      "Pneumonia": 0.141,
+      "Pneumothorax": 0.0555,
+      "Consolidation": 0.3237,
+      "Edema": 0.1563,
+      "Emphysema": 0.2233,
+      "Fibrosis": 0.6931,
+      "Pleural_Thickening": 0.3007,
+      "Hernia": 0.0015
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "NEGATIVE",
+      "Cardiomegaly": "NEGATIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "POSITIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "POSITIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "NEGATIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "POSITIVE",
+      "Pleural_Thickening": "NEGATIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Fibrosis",
+      "raw_probability": 0.7366,
+      "calibrated_probability": 0.6931
+    },
+    "detected_findings": [
+      "Infiltration",
+      "Nodule",
+      "Fibrosis"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 64,
+    "sharpness": 66.24,
+    "contrast": 64.21,
+    "brightness": 110.53,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.7366,
+    "energy_score": -2.0441
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Fibrosis",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "1e021a7190a54f6475e6398ee84b6457731d6986fe6cae8f3767aded6378577e"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:47:50.915307+00:00",
+  "report_sha256": "1aceb1f3d217703546207943480b3f1f35693ad05c13a1c260311973f9ae6b98"
+}

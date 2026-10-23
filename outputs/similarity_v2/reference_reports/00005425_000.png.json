@@ -1,0 +1,143 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00005425_000.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "5425",
+  "demographics": {
+    "patient_age": 48,
+    "patient_gender": "M",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Cardiomegaly"
+    ],
+    "finding_labels": "Cardiomegaly",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.3517,
+      "Cardiomegaly": 0.9349,
+      "Effusion": 0.5648,
+      "Infiltration": 0.4734,
+      "Mass": 0.1205,
+      "Nodule": 0.2522,
+      "Pneumonia": 0.3237,
+      "Pneumothorax": 0.0841,
+      "Consolidation": 0.122,
+      "Edema": 0.2409,
+      "Emphysema": 0.0172,
+      "Fibrosis": 0.0698,
+      "Pleural_Thickening": 0.2451,
+      "Hernia": 0.0014
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.3641,
+      "Cardiomegaly": 0.8414,
+      "Effusion": 0.5384,
+      "Infiltration": 0.4665,
+      "Mass": 0.1966,
+      "Nodule": 0.2737,
+      "Pneumonia": 0.2722,
+      "Pneumothorax": 0.1219,
+      "Consolidation": 0.1911,
+      "Edema": 0.3115,
+      "Emphysema": 0.0224,
+      "Fibrosis": 0.1139,
+      "Pleural_Thickening": 0.2558,
+      "Hernia": 0.0019
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "NEGATIVE",
+      "Cardiomegaly": "POSITIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "POSITIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "NEGATIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "NEGATIVE",
+      "Pleural_Thickening": "NEGATIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Cardiomegaly",
+      "raw_probability": 0.9349,
+      "calibrated_probability": 0.8414
+    },
+    "detected_findings": [
+      "Cardiomegaly",
+      "Infiltration"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 65,
+    "sharpness": 68.07,
+    "contrast": 64.13,
+    "brightness": 114.41,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.9349,
+    "energy_score": -2.9454
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Cardiomegaly",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "e43a7431e552e8a19dc42a34e22671f1932f55f621d90dbe0bf7ecd1056fb4e3"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:46:34.180880+00:00",
+  "report_sha256": "f7131b4e4483d8e98509691e1fc064c755d753e1cbb503e866cc735cc61fb085"
+}

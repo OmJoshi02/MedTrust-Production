@@ -1,0 +1,14 @@
+{
+    "sharpness_low": 10.820903227915492,
+    "sharpness_high": 180.0,
+    "contrast_low": 32.67313991533738,
+    "contrast_high": 80.0,
+    "brightness_target": 162.6133178474642,
+    "brightness_tolerance": 65.0,
+    "clipping_low": 0.0,
+    "clipping_high": 30.0,
+    "noise_low": 0.0,
+    "noise_high": 15.0,
+    "resolution_low": 250.0,
+    "resolution_high": 1200.0
+}

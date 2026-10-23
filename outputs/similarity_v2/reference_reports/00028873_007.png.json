@@ -1,0 +1,146 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00028873_007.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "28873",
+  "demographics": {
+    "patient_age": 14,
+    "patient_gender": "M",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Cardiomegaly"
+    ],
+    "finding_labels": "Cardiomegaly",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.1672,
+      "Cardiomegaly": 0.9899,
+      "Effusion": 0.6754,
+      "Infiltration": 0.559,
+      "Mass": 0.1497,
+      "Nodule": 0.5585,
+      "Pneumonia": 0.2289,
+      "Pneumothorax": 0.1018,
+      "Consolidation": 0.1827,
+      "Edema": 0.2154,
+      "Emphysema": 0.0565,
+      "Fibrosis": 0.4744,
+      "Pleural_Thickening": 0.4481,
+      "Hernia": 0.0006
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.1878,
+      "Cardiomegaly": 0.9465,
+      "Effusion": 0.6065,
+      "Infiltration": 0.5743,
+      "Mass": 0.2262,
+      "Nodule": 0.5525,
+      "Pneumonia": 0.1652,
+      "Pneumothorax": 0.1419,
+      "Consolidation": 0.2507,
+      "Edema": 0.2905,
+      "Emphysema": 0.0675,
+      "Fibrosis": 0.4797,
+      "Pleural_Thickening": 0.4507,
+      "Hernia": 0.0008
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "NEGATIVE",
+      "Cardiomegaly": "POSITIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "POSITIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "POSITIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "NEGATIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "POSITIVE",
+      "Pleural_Thickening": "POSITIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Cardiomegaly",
+      "raw_probability": 0.9899,
+      "calibrated_probability": 0.9465
+    },
+    "detected_findings": [
+      "Cardiomegaly",
+      "Infiltration",
+      "Nodule",
+      "Fibrosis",
+      "Pleural_Thickening"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 47,
+    "sharpness": 36.08,
+    "contrast": 41.65,
+    "brightness": 98.27,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.9899,
+    "energy_score": -4.6617
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Cardiomegaly",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "9b1a747b8e917d2eb5e726a5aa621eaa020441867a39272dfb5cd36c1d106db4"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:48:01.665286+00:00",
+  "report_sha256": "f27cc6e7207a34026fbd1eccb59d65888cf6e40002e8b1ac2a9a96d2460b9621"
+}

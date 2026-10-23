@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00001546_000.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "1546",
+  "demographics": {
+    "patient_age": 46,
+    "patient_gender": "F",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Fibrosis"
+    ],
+    "finding_labels": "Fibrosis",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.3031,
+      "Cardiomegaly": 0.0042,
+      "Effusion": 0.1312,
+      "Infiltration": 0.2778,
+      "Mass": 0.0995,
+      "Nodule": 0.3411,
+      "Pneumonia": 0.0195,
+      "Pneumothorax": 0.7903,
+      "Consolidation": 0.1389,
+      "Edema": 0.0009,
+      "Emphysema": 0.8866,
+      "Fibrosis": 0.8088,
+      "Pleural_Thickening": 0.2662,
+      "Hernia": 0.0052
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.3188,
+      "Cardiomegaly": 0.0315,
+      "Effusion": 0.2468,
+      "Infiltration": 0.2304,
+      "Mass": 0.1736,
+      "Nodule": 0.3565,
+      "Pneumonia": 0.0053,
+      "Pneumothorax": 0.7496,
+      "Consolidation": 0.2086,
+      "Edema": 0.0076,
+      "Emphysema": 0.8719,
+      "Fibrosis": 0.7582,
+      "Pleural_Thickening": 0.2764,
+      "Hernia": 0.0065
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "NEGATIVE",
+      "Cardiomegaly": "NEGATIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "NEGATIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "NEGATIVE",
+      "Pneumothorax": "POSITIVE",
+      "Consolidation": "NEGATIVE",
+      "Edema": "NEGATIVE",
+      "Emphysema": "POSITIVE",
+      "Fibrosis": "POSITIVE",
+      "Pleural_Thickening": "NEGATIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Emphysema",
+      "raw_probability": 0.8866,
+      "calibrated_probability": 0.8719
+    },
+    "detected_findings": [
+      "Pneumothorax",
+      "Emphysema",
+      "Fibrosis"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 67,
+    "sharpness": 64.57,
+    "contrast": 67.97,
+    "brightness": 119.6,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.8866,
+    "energy_score": -2.8888
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Emphysema",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "8d304a6390f8f99b8d651b0f42256f8b71ffaacd691ba2689359b73b3149536e"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:46:19.476958+00:00",
+  "report_sha256": "eb27f688697be40b95065166539b5409662e57e4414e3afaff6b44acbe120f3d"
+}

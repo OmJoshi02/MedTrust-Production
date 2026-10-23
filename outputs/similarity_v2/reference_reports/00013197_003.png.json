@@ -1,0 +1,147 @@
+{
+  "schema_version": "2.0.0",
+  "reference_id": "00013197_003.png",
+  "dataset_provenance": "NIH ChestX-ray14",
+  "dataset_split": "train",
+  "patient_id": "13197",
+  "demographics": {
+    "patient_age": 59,
+    "patient_gender": "F",
+    "view_position": "PA"
+  },
+  "dataset_annotations": {
+    "findings": [
+      "Atelectasis"
+    ],
+    "finding_labels": "Atelectasis",
+    "annotation_type": "Dataset Annotation",
+    "is_authentic_nih": true
+  },
+  "predictions": {
+    "raw_scores": {
+      "Atelectasis": 0.852,
+      "Cardiomegaly": 0.9115,
+      "Effusion": 0.5733,
+      "Infiltration": 0.5958,
+      "Mass": 0.2303,
+      "Nodule": 0.3077,
+      "Pneumonia": 0.5655,
+      "Pneumothorax": 0.0376,
+      "Consolidation": 0.73,
+      "Edema": 0.5184,
+      "Emphysema": 0.034,
+      "Fibrosis": 0.3741,
+      "Pleural_Thickening": 0.3691,
+      "Hernia": 0.0046
+    },
+    "calibrated_scores": {
+      "Atelectasis": 0.8314,
+      "Cardiomegaly": 0.8116,
+      "Effusion": 0.5434,
+      "Infiltration": 0.62,
+      "Mass": 0.2985,
+      "Nodule": 0.3257,
+      "Pneumonia": 0.5869,
+      "Pneumothorax": 0.0641,
+      "Consolidation": 0.6741,
+      "Edema": 0.5127,
+      "Emphysema": 0.0423,
+      "Fibrosis": 0.3995,
+      "Pleural_Thickening": 0.3755,
+      "Hernia": 0.0058
+    },
+    "thresholds": {
+      "Atelectasis": 0.4244,
+      "Cardiomegaly": 0.5273,
+      "Effusion": 0.628,
+      "Infiltration": 0.4525,
+      "Mass": 0.6511,
+      "Nodule": 0.5365,
+      "Pneumonia": 0.3421,
+      "Pneumothorax": 0.5323,
+      "Consolidation": 0.3825,
+      "Edema": 0.3135,
+      "Emphysema": 0.3388,
+      "Fibrosis": 0.4393,
+      "Pleural_Thickening": 0.4497,
+      "Hernia": 0.0626
+    },
+    "decisions": {
+      "Atelectasis": "POSITIVE",
+      "Cardiomegaly": "POSITIVE",
+      "Effusion": "NEGATIVE",
+      "Infiltration": "POSITIVE",
+      "Mass": "NEGATIVE",
+      "Nodule": "NEGATIVE",
+      "Pneumonia": "POSITIVE",
+      "Pneumothorax": "NEGATIVE",
+      "Consolidation": "POSITIVE",
+      "Edema": "POSITIVE",
+      "Emphysema": "NEGATIVE",
+      "Fibrosis": "NEGATIVE",
+      "Pleural_Thickening": "NEGATIVE",
+      "Hernia": "NEGATIVE"
+    },
+    "primary_finding": {
+      "disease": "Atelectasis",
+      "raw_probability": 0.852,
+      "calibrated_probability": 0.8314
+    },
+    "detected_findings": [
+      "Atelectasis",
+      "Cardiomegaly",
+      "Infiltration",
+      "Pneumonia",
+      "Consolidation",
+      "Edema"
+    ]
+  },
+  "image_quality": {
+    "composite_score": 83,
+    "sharpness": 215.35,
+    "contrast": 54.17,
+    "brightness": 133.11,
+    "suitable": true,
+    "status": "SUCCESS"
+  },
+  "ood": {
+    "is_ood": false,
+    "status": "IN_DISTRIBUTION",
+    "msp_score": 0.9115,
+    "energy_score": -3.2563
+  },
+  "uncertainty": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "method": "MC-Dropout",
+    "overall_mean_variance": null,
+    "reason": "Omitted in batch reference library to optimize build throughput"
+  },
+  "explainability": {
+    "status": "NOT_EVALUATED_OFFLINE",
+    "gradcam_available": false,
+    "primary_target": "Atelectasis",
+    "reason": "Grad-CAM heatmaps computed dynamically upon individual case inspection"
+  },
+  "embedding": {
+    "dimension": 1024,
+    "dtype": "float32",
+    "norm": 1.0,
+    "index_version": "2.0-nih-authentic",
+    "vector_sha256": "2e4637e59ef5b331e4f027999ad52ca859910d74cf7ccd99c832b70556327fc6"
+  },
+  "model_provenance": {
+    "architecture": "DenseNet-121",
+    "checkpoint_identity": "checkpoints/best_model.pt (Epoch 7)",
+    "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+    "preprocessing_version": "1.0-ImageNet-224"
+  },
+  "component_status": {
+    "prediction": "SUCCESS",
+    "quality": "SUCCESS",
+    "ood": "SUCCESS",
+    "uncertainty": "NOT_EVALUATED_OFFLINE",
+    "explainability": "NOT_EVALUATED_OFFLINE"
+  },
+  "created_at": "2026-10-20T06:47:04.139454+00:00",
+  "report_sha256": "922a888f287012f4a971336b257dd355991ed5dc4a4d222ccb054b918ad11614"
+}
