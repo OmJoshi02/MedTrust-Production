@@ -1,6 +1,6 @@
 """
 MedTrust V2 — Reference Case Intelligence Library Builder
-(src/similarity_v2/builder.py)
+(src/similarity/builder.py)
 
 Offline batch pipeline that builds the MedTrust V2 Reference Intelligence Library:
 1. Loads and validates all 2,500 authentic reference radiographs from the training split.
@@ -38,7 +38,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from src.dataset import CLASSES
 from src.model import create_model
 from src.transformer import test_transform
-from src.similarity_v2.report_schema import (
+from src.similarity.report_schema import (
     CANONICAL_DISEASES,
     SCHEMA_VERSION,
     create_reference_report,
@@ -52,7 +52,7 @@ DEFAULT_THRESHOLDS_PATH = PROJECT_ROOT / "outputs" / "evaluation" / "thresholds.
 DEFAULT_TEMPERATURE_PATH = PROJECT_ROOT / "outputs" / "calibration" / "temperature.json"
 DEFAULT_TRAIN_LIST = PROJECT_ROOT / "splits" / "train_list.txt"
 
-DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "outputs" / "similarity_v2"
+DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "outputs" / "similarity"
 
 
 class ReferenceImageBatchDataset(Dataset):
@@ -459,17 +459,17 @@ class ReferenceLibraryBuilder:
             "build_duration_seconds": round(elapsed, 2),
             "artifacts": {
                 "reference_embeddings_npz": {
-                    "path": "outputs/similarity_v2/reference_embeddings.npz",
+                    "path": "outputs/similarity/reference_embeddings.npz",
                     "sha256": npz_sha256,
                     "size_bytes": npz_path.stat().st_size,
                 },
                 "reference_metadata_json": {
-                    "path": "outputs/similarity_v2/reference_metadata.json",
+                    "path": "outputs/similarity/reference_metadata.json",
                     "sha256": meta_sha256,
                     "size_bytes": meta_json_path.stat().st_size,
                 },
                 "disease_frequency_json": {
-                    "path": "outputs/similarity_v2/disease_frequency.json",
+                    "path": "outputs/similarity/disease_frequency.json",
                     "sha256": freq_sha256,
                     "size_bytes": freq_out_path.stat().st_size if freq_out_path.exists() else 0,
                 },

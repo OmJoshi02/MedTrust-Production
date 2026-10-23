@@ -5,11 +5,11 @@ import { Button } from '@/components/ui/Button';
 import { PasswordField } from '@/components/ui/PasswordField';
 import { TextField } from '@/components/ui/TextField';
 import { AuthLayout } from '@/components/layout/AuthLayout';
-import { env } from '@/config/env';
+import { env, getCustomApiBaseUrl, setCustomApiBaseUrl } from '@/config/env';
 import { useAuth } from '@/hooks/useAuth';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { validateEmail } from '@/lib/validation';
-import { describeError, isApiError } from '@/services';
+import { apiClient, describeError, isApiError } from '@/services';
 
 interface FieldErrors {
   email?: string | null;
@@ -28,6 +28,70 @@ export function LoginPage() {
   const [formError, setFormError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [showRecovery, setShowRecovery] = useState(false);
+
+  // Backend connection URL configuration for Netlify/tunnels
+  const [customBackendUrl, setCustomBackendUrl] = useState(() => getCustomApiBaseUrl() || '');
+  const [showServerConfig, setShowServerConfig] = useState(false);
+  const [serverStatus, setServerStatus] = useState<'idle' | 'testing' | 'success' | 'error'>('idle');
+  const [serverStatusMsg, setServerStatusMsg] = useState('');
+
+  const isTunnelOrConnectionError =
+    formError &&
+    (formError.includes('503') ||
+      formError.toLowerCase().includes('tunnel') ||
+      formError.toLowerCase().includes('network') ||
+      formError.toLowerCase().includes('failed to reach'));
+
+  const handleSaveServer = async () => {
+    const trimmed = customBackendUrl.trim().replace(/\/+$/, '');
+    if (!trimmed) {
+      setCustomApiBaseUrl(null);
+      apiClient.setBaseUrl('');
+      setServerStatus('success');
+      setServerStatusMsg('Reset to default backend.');
+      setFormError(null);
+      return;
+    }
+    setServerStatus('testing');
+    setServerStatusMsg('Testing connection to backend...');
+    try {
+      const res = await fetch(`${trimmed}/api/v1/health`, {
+        headers: {
+          'Bypass-Tunnel-Reminder': 'true',
+          'ngrok-skip-browser-warning': 'true',
+        },
+      });
+      if (res.ok) {
+        setCustomApiBaseUrl(trimmed);
+        apiClient.setBaseUrl(trimmed);
+        setServerStatus('success');
+        setServerStatusMsg('Connected successfully! You can now log in.');
+        setFormError(null);
+      } else {
+        setServerStatus('error');
+        setServerStatusMsg(`Server returned status ${res.status}.`);
+      }
+    } catch {
+      try {
+        const res2 = await fetch(`${trimmed}/api/health/live`, {
+          headers: {
+            'Bypass-Tunnel-Reminder': 'true',
+            'ngrok-skip-browser-warning': 'true',
+          },
+        });
+        if (res2.ok) {
+          setCustomApiBaseUrl(trimmed);
+          apiClient.setBaseUrl(trimmed);
+          setServerStatus('success');
+          setServerStatusMsg('Connected successfully! You can now log in.');
+          setFormError(null);
+          return;
+        }
+      } catch {}
+      setServerStatus('error');
+      setServerStatusMsg('Could not reach backend URL. Ensure run_production.bat and start_tunnel.bat are running on your laptop.');
+    }
+  };
 
   if (status === 'authenticated' && !submitting) return <Navigate to="/analyze" replace />;
 
@@ -84,9 +148,73 @@ export function LoginPage() {
         </Alert>
       )}
       {formError && (
-        <Alert tone="danger" title="Sign-in failed" className="mb-5">
+        <Alert tone="danger" title="Sign-in failed" className="mb-4">
           {formError}
         </Alert>
+      )}
+
+      {/* Backend Tunnel / Server Configuration for Netlify & Remote Deployments */}
+      {(showServerConfig || isTunnelOrConnectionError) && (
+        <div className="mb-4 rounded-md border border-line bg-surface p-3 text-xs shadow-sm">
+          <div className="flex items-center justify-between font-semibold text-ink mb-1">
+            <span>Laptop Backend Connection (Tunnel)</span>
+            <button
+              type="button"
+              onClick={() => setShowServerConfig(false)}
+              className="text-muted hover:text-ink text-[11px]"
+            >
+              ✕ Close
+            </button>
+          </div>
+          <p className="text-muted mb-2 leading-relaxed">
+            Running frontend on Netlify? Keep <code className="font-mono bg-subtle px-1 py-0.5 rounded">run_production.bat</code> and <code className="font-mono bg-subtle px-1 py-0.5 rounded">start_tunnel.bat</code> open on your laptop, then paste your active Cloudflare HTTPS URL below:
+          </p>
+          <div className="flex gap-2">
+            <input
+              type="url"
+              placeholder="https://your-name.trycloudflare.com"
+              value={customBackendUrl}
+              onChange={(e) => setCustomBackendUrl(e.target.value)}
+              className="flex-1 rounded border border-line bg-subtle px-2.5 py-1.5 font-mono text-xs text-ink placeholder:text-muted/60 focus:border-ink focus:outline-none"
+            />
+            <button
+              type="button"
+              onClick={handleSaveServer}
+              disabled={serverStatus === 'testing'}
+              className="rounded bg-ink px-3 py-1.5 font-medium text-surface transition-opacity hover:opacity-90 disabled:opacity-50"
+            >
+              {serverStatus === 'testing' ? 'Testing…' : 'Connect'}
+            </button>
+          </div>
+          {serverStatusMsg && (
+            <p
+              className={`mt-2 text-xs font-medium ${
+                serverStatus === 'success' ? 'text-success' : 'text-danger'
+              }`}
+            >
+              {serverStatusMsg}
+            </p>
+          )}
+        </div>
+      )}
+
+      {/* Server status pill when config is hidden */}
+      {!showServerConfig && !isTunnelOrConnectionError && (
+        <div className="mb-3 flex items-center justify-between text-[11px] text-muted">
+          <span>
+            Backend:{' '}
+            <span className="font-mono text-ink">
+              {getCustomApiBaseUrl() || 'Default Proxy / Localhost'}
+            </span>
+          </span>
+          <button
+            type="button"
+            onClick={() => setShowServerConfig(true)}
+            className="underline underline-offset-2 hover:text-ink"
+          >
+            Configure Server URL
+          </button>
+        </div>
       )}
 
       <div className="mb-4 rounded-md border border-line bg-subtle/60 p-3 text-xs leading-relaxed text-muted">

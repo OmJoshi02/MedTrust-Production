@@ -132,14 +132,34 @@ function linkSignals(external: AbortSignal | undefined, timeoutMs: number) {
 
 export class ApiClient {
   private unauthorizedHandler: (() => void) | null = null;
-  private readonly baseUrl: string;
+  private defaultBaseUrl: string;
   private readonly defaultTimeoutMs: number;
   private token: string | null =
     typeof window !== 'undefined' ? window.sessionStorage.getItem('medtrust_token') : null;
 
   constructor(baseUrl: string, defaultTimeoutMs: number) {
-    this.baseUrl = baseUrl;
+    this.defaultBaseUrl = baseUrl;
     this.defaultTimeoutMs = defaultTimeoutMs;
+  }
+
+  getBaseUrl(): string {
+    if (typeof window !== 'undefined') {
+      const custom = window.localStorage.getItem('medtrust_custom_api_url');
+      if (custom && custom.trim()) {
+        return custom.trim().replace(/\/+$/, '');
+      }
+    }
+    return this.defaultBaseUrl;
+  }
+
+  setBaseUrl(url: string | null): void {
+    if (typeof window !== 'undefined') {
+      if (url && url.trim()) {
+        window.localStorage.setItem('medtrust_custom_api_url', url.trim().replace(/\/+$/, ''));
+      } else {
+        window.localStorage.removeItem('medtrust_custom_api_url');
+      }
+    }
   }
 
   setToken(token: string | null): void {
@@ -160,7 +180,8 @@ export class ApiClient {
   }
 
   url(path: string, query?: Record<string, Primitive>): string {
-    const url = `${this.baseUrl}${path}`;
+    const activeBase = this.getBaseUrl();
+    const url = `${activeBase}${path}`;
     if (!query) return url;
     const params = new URLSearchParams();
     for (const [key, value] of Object.entries(query)) {
@@ -186,6 +207,7 @@ export class ApiClient {
     const headers: Record<string, string> = {
       Accept: responseType === 'json' ? 'application/json' : '*/*',
       'Bypass-Tunnel-Reminder': 'true',
+      'ngrok-skip-browser-warning': 'true',
     };
     if (this.token) {
       headers.Authorization = `Bearer ${this.token}`;
@@ -285,6 +307,8 @@ export class ApiClient {
       xhr.timeout = timeoutMs;
       xhr.responseType = 'text';
       xhr.setRequestHeader('Accept', 'application/json');
+      xhr.setRequestHeader('Bypass-Tunnel-Reminder', 'true');
+      xhr.setRequestHeader('ngrok-skip-browser-warning', 'true');
       if (this.token) {
         xhr.setRequestHeader('Authorization', `Bearer ${this.token}`);
       }

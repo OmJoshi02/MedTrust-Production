@@ -72,3 +72,17 @@ export const env = {
 } as const;
 
 export type AppEnv = typeof env;
+
+export function getCustomApiBaseUrl(): string | null {
+  if (typeof window === 'undefined') return null;
+  return window.localStorage.getItem('medtrust_custom_api_url');
+}
+
+export function setCustomApiBaseUrl(url: string | null): void {
+  if (typeof window === 'undefined') return;
+  if (url && url.trim()) {
+    window.localStorage.setItem('medtrust_custom_api_url', trimTrailingSlash(url.trim()));
+  } else {
+    window.localStorage.removeItem('medtrust_custom_api_url');
+  }
+}

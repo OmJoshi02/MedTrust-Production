@@ -1,6 +1,6 @@
 """
 MedTrust V2 — Persistent Reference Embedding Index
-(src/similarity_v2/embedding_index.py)
+(src/similarity/embedding_index.py)
 
 Manages loading, validating, and searching precomputed reference feature embeddings
 in an embedding-only deployment architecture without requiring raw reference X-rays.
@@ -22,9 +22,9 @@ from typing import Any, Dict, List, Optional, Sequence, Set, Tuple, Union
 import numpy as np
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-DEFAULT_INDEX_PATH = PROJECT_ROOT / "outputs" / "similarity_v2" / "reference_embeddings.npz"
-DEFAULT_MANIFEST_PATH = PROJECT_ROOT / "outputs" / "similarity_v2" / "reference_manifest.json"
-DEFAULT_METADATA_PATH = PROJECT_ROOT / "outputs" / "similarity_v2" / "reference_metadata.json"
+DEFAULT_INDEX_PATH = PROJECT_ROOT / "outputs" / "similarity" / "reference_embeddings.npz"
+DEFAULT_MANIFEST_PATH = PROJECT_ROOT / "outputs" / "similarity" / "reference_manifest.json"
+DEFAULT_METADATA_PATH = PROJECT_ROOT / "outputs" / "similarity" / "reference_metadata.json"
 
 
 class PersistentEmbeddingIndex:

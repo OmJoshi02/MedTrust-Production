@@ -93,17 +93,10 @@ TRUSTED_ARTIFACT_MANIFEST: Dict[str, Dict[str, Any]] = {
     },
     "reference_embeddings": {
         "rel_path": "outputs/similarity/reference_embeddings.npz",
-        "sha256": "2095077682a2f2ac98a369dc218c7d6c2fd2e3def2a8375bc8f046a0f6edd59b",
-        "min_size_bytes": 1000,
-        "required": False,
-        "description": "DenseNet reference case embeddings for Top-K similarity retrieval",
-    },
-    "reference_embeddings_v2": {
-        "rel_path": "outputs/similarity_v2/reference_embeddings.npz",
         "sha256": "d88b7725f17df839af7cf40c537923772dd55724e440e3aa50ca15906bc578e2",
         "min_size_bytes": 1000,
         "required": False,
-        "description": "DenseNet reference case embeddings for Top-K similarity retrieval V2",
+        "description": "DenseNet reference case embeddings for Top-K similarity retrieval",
     },
     "ood_thresholds": {
         "rel_path": "outputs/ood/artifacts/ood_thresholds.json",

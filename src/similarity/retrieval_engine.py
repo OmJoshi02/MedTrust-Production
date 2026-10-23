@@ -1,6 +1,6 @@
 """
 MedTrust V2 — Similarity Retrieval Engine
-(src/similarity_v2/retrieval_engine.py)
+(src/similarity/retrieval_engine.py)
 
 Performs Top-K case-based similarity retrieval against the persistent reference
 intelligence library, returning structured case matches, clinical concordance,
@@ -24,15 +24,15 @@ import torch
 from PIL import Image
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-DEFAULT_REPORTS_DIR = PROJECT_ROOT / "outputs" / "similarity_v2" / "reference_reports"
+DEFAULT_REPORTS_DIR = PROJECT_ROOT / "outputs" / "similarity" / "reference_reports"
 
-from src.similarity_v2.embedding_index import PersistentEmbeddingIndex
-from src.similarity_v2.evidence_engine import EvidenceComparisonEngine, STANDARD_DISCLAIMER
+from src.similarity.embedding_index import PersistentEmbeddingIndex
+from src.similarity.evidence_engine import EvidenceComparisonEngine, STANDARD_DISCLAIMER
 
 
-class SimilarityRetrievalEngineV2:
+class SimilarityRetrievalEngine:
     """
-    Production-grade case similarity retrieval engine for MedTrust V2.
+    Production-grade case similarity retrieval engine for MedTrust.
     """
 
     def __init__(
@@ -274,4 +274,9 @@ class SimilarityRetrievalEngineV2:
     def analyze(self, *args, **kwargs) -> Dict[str, Any]:
         """Alias for find_similar_cases to satisfy MedTrust analyzer protocol."""
         return self.find_similar_cases(*args, **kwargs)
+
+
+# Backward compatibility alias
+SimilarityRetrievalEngineV2 = SimilarityRetrievalEngine
+
 

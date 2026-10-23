@@ -1,0 +1,21 @@
+{
+  "build_timestamp": "2026-10-20T06:48:38.283184+00:00",
+  "index_version": "2.0-nih-authentic",
+  "model_checkpoint": "checkpoints/best_model.pt",
+  "checkpoint_sha256": "6160588028dad6ce5396c74962c7d85b162d06b816f34175249fa069c8466d34",
+  "total_reference_images": 2500,
+  "successful_embeddings": 2500,
+  "failed_embeddings": 0,
+  "embedding_dim": 1024,
+  "is_unit_normalized": true,
+  "reports_generated": 2500,
+  "duration_seconds": 115.52,
+  "device": "cuda",
+  "batch_size": 64,
+  "artifacts": {
+    "embeddings_npz": "outputs/similarity/reference_embeddings.npz",
+    "metadata_json": "outputs/similarity/reference_metadata.json",
+    "manifest_json": "outputs/similarity/reference_manifest.json",
+    "reports_dir": "outputs/similarity/reference_reports"
+  }
+}

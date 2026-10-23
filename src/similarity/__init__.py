@@ -1,61 +1,56 @@
 """
-MedTrust V1 — Module 8: Similarity Analysis Package (src/similarity/__init__.py)
-
-Exports:
-- DISCLAIMER_TEXT
-- compute_cosine_similarity
-- rank_similar_images
-- EmbeddingStore
-- DenseNetSimilarityExtractor
-- SimilarityAnalyzer
+MedTrust — Production Case Similarity & Intelligence System
+(src/similarity/__init__.py)
 """
 
-from src.similarity.disease_frequency import (
+from src.similarity.report_schema import (
     CANONICAL_DISEASES,
-    NO_FINDING_LABEL,
-    compute_disease_frequencies,
-    load_cached_disease_frequencies,
+    SCHEMA_VERSION,
+    create_reference_report,
+    validate_reference_report,
 )
-from src.similarity.similarity_calculator import (
-    DISCLAIMER_TEXT,
-    compute_cosine_similarity,
-    compute_predicted_findings_evidence,
-    compute_similarity_weighted_support,
-    evaluate_diagnostic_concordance,
-    rank_similar_images,
-)
-from src.similarity.embedding_store import (
-    DEFAULT_EMBEDDINGS_PATH,
-    EmbeddingStore,
-    embedding_store,
-)
-from src.similarity.metadata_loader import (
-    ReferenceMetadataLoader,
-    metadata_loader,
-    parse_finding_labels,
+from src.similarity.embedding_index import PersistentEmbeddingIndex
+from src.similarity.evidence_engine import (
+    EvidenceComparisonEngine,
+    STANDARD_DISCLAIMER,
+    METHODOLOGICAL_EXPLANATION,
 )
 from src.similarity.feature_extractor import DenseNetSimilarityExtractor
+from src.similarity.retrieval_engine import (
+    SimilarityRetrievalEngine,
+    SimilarityRetrievalEngineV2,
+)
 from src.similarity.similarity_analyzer import SimilarityAnalyzer
+from src.similarity.builder import ReferenceLibraryBuilder
+from src.similarity.service import (
+    get_embedding_index,
+    get_embedding_index_v2,
+    get_similarity_engine,
+    get_similarity_engine_v2,
+    get_reference_case_report,
+    get_index_health,
+    get_v2_index_health,
+)
 
 __all__ = [
     "CANONICAL_DISEASES",
-    "NO_FINDING_LABEL",
-    "compute_disease_frequencies",
-    "load_cached_disease_frequencies",
-    "DISCLAIMER_TEXT",
-    "compute_cosine_similarity",
-    "compute_predicted_findings_evidence",
-    "compute_similarity_weighted_support",
-    "evaluate_diagnostic_concordance",
-    "rank_similar_images",
-    "DEFAULT_EMBEDDINGS_PATH",
-    "EmbeddingStore",
-    "embedding_store",
-    "ReferenceMetadataLoader",
-    "metadata_loader",
-    "parse_finding_labels",
+    "SCHEMA_VERSION",
+    "create_reference_report",
+    "validate_reference_report",
+    "PersistentEmbeddingIndex",
+    "EvidenceComparisonEngine",
+    "STANDARD_DISCLAIMER",
+    "METHODOLOGICAL_EXPLANATION",
     "DenseNetSimilarityExtractor",
+    "SimilarityRetrievalEngine",
+    "SimilarityRetrievalEngineV2",
     "SimilarityAnalyzer",
+    "ReferenceLibraryBuilder",
+    "get_embedding_index",
+    "get_embedding_index_v2",
+    "get_similarity_engine",
+    "get_similarity_engine_v2",
+    "get_reference_case_report",
+    "get_index_health",
+    "get_v2_index_health",
 ]
-
-

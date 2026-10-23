@@ -1,6 +1,6 @@
 """
 MedTrust V2 — Reference Case Intelligence Report Schema
-(src/similarity_v2/report_schema.py)
+(src/similarity/report_schema.py)
 
 Defines and validates the structured clinical intelligence schema for precomputed
 reference case reports stored in the persistent reference library.

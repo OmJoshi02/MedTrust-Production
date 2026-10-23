@@ -1,6 +1,6 @@
 """
-MedTrust V2 — Unit and Regression Test Suite for Similarity Analyzer V2
-(tests/test_similarity_v2.py)
+MedTrust — Unit and Regression Test Suite for Similarity Analyzer
+(tests/test_similarity.py)
 
 Comprehensive test coverage for:
 1. Reference Case Intelligence Report Schema & Validation
@@ -25,20 +25,20 @@ from PIL import Image
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-from src.similarity_v2.report_schema import (
+from src.similarity.report_schema import (
     validate_reference_report,
     create_reference_report,
     SCHEMA_VERSION,
 )
-from src.similarity_v2.embedding_index import PersistentEmbeddingIndex
-from src.similarity_v2.evidence_engine import (
+from src.similarity.embedding_index import PersistentEmbeddingIndex
+from src.similarity.evidence_engine import (
     EvidenceComparisonEngine,
     STANDARD_DISCLAIMER,
     METHODOLOGICAL_EXPLANATION,
     CANONICAL_DISEASES,
 )
-from src.similarity_v2.retrieval_engine import SimilarityRetrievalEngineV2
-from src.similarity_v2.service import (
+from src.similarity.retrieval_engine import SimilarityRetrievalEngineV2
+from src.similarity.service import (
     get_v2_index_health,
     get_reference_case_report,
     get_similarity_engine_v2,

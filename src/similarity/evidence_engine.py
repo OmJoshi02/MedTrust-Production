@@ -1,6 +1,6 @@
 """
 MedTrust V2 — Evidence Comparison & Clinical Concordance Engine
-(src/similarity_v2/evidence_engine.py)
+(src/similarity/evidence_engine.py)
 
 Calculates finding-specific similarity evidence, diagnostic concordance, and
 label support metrics across the actual retrieved Top-K reference cases.
@@ -21,8 +21,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Set, Tuple
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-DEFAULT_FREQ_PATH = PROJECT_ROOT / "outputs" / "similarity_v2" / "disease_frequency.json"
-LEGACY_FREQ_PATH = PROJECT_ROOT / "outputs" / "similarity" / "disease_frequency.json"
+DEFAULT_FREQ_PATH = PROJECT_ROOT / "outputs" / "similarity" / "disease_frequency.json"
 
 STANDARD_DISCLAIMER: str = (
     "Case similarity provides supporting context based on visual feature proximity in DenseNet-121 latent space. "
@@ -69,9 +68,7 @@ class EvidenceComparisonEngine:
     """
 
     def __init__(self, frequency_path: Optional[Path] = None) -> None:
-        self.frequency_path = frequency_path or (
-            DEFAULT_FREQ_PATH if DEFAULT_FREQ_PATH.exists() else LEGACY_FREQ_PATH
-        )
+        self.frequency_path = Path(frequency_path or DEFAULT_FREQ_PATH)
         self._prevalence_map: Optional[Dict[str, float]] = None
         self._frequency_raw: Optional[Dict[str, Any]] = None
 

@@ -58,7 +58,7 @@ if str(PROJECT_ROOT) not in sys.path:
 DIST_DIR = PROJECT_ROOT / "frontend" / "dist"
 
 from backend.engine import MedTrustBackendEngine, verify_artifacts
-from src.similarity_v2 import get_reference_case_report, get_v2_index_health
+from src.similarity import get_reference_case_report, get_index_health, get_v2_index_health
 from backend.database import (
     init_db,
     create_user,
